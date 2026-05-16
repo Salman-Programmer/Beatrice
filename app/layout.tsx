@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans} from "next/font/google";
 import "./globals.css";
+import SearchProvider from "@/context/SearchProvider";
 
 const jakartaSans = Plus_Jakarta_Sans({
   variable: "--font-jakarta-sans",
@@ -24,7 +25,10 @@ export default function RootLayout({
       lang="en"
       className={`${jakartaSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <SearchProvider>{children}</SearchProvider>
+        
+        </body>
     </html>
   );
 }
